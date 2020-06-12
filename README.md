@@ -141,8 +141,8 @@ Code | Description
 ---- | -----------
 101  | The `repository` option isn't valid string.
 102  | The `max` option isn't valid number.
-103  | *Reserved for future use*.
-104  | *Reserved for future use*.
+103  | *[Reserved for future use](https://github.com/viral32111/facepunch-commits/projects/1#card-39996517)*.
+104  | *[Reserved for future use](https://github.com/viral32111/facepunch-commits/projects/1#card-39996549)*.
 105  | The `userAgent` option isn't a valid string.
 106  | Attempted to fetch less than one commit.
 107  | The `userAgent` option is an empty string.
