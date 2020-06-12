@@ -4,12 +4,16 @@ This is a Node.js package for interfacing with the [Facepunch Commits](https://c
 
 ## Documentation
 
+### Installing the package
+
+To install this package into your project, firstly create a `.npmrc` file inside your project folder, then within that place `registry=https://npm.pkg.github.com/viral32111`. After this, you can install the package by running `npm install @viral32111/facepunch-commits`.
+
 ### Importing the package
 
-To import this package into your script or project, simply call [`require()`](https://nodejs.org/api/modules.html#modules_require_id) with `"facepunch-commits"` as the name. For example:
+To import this package into your script, simply call [`require()`](https://nodejs.org/api/modules.html#modules_require_id) with `"facepunch-commits"` as the name. For example:
 
 ```javascript
-const facepunchCommits = require( "facepunch-commits" )
+const facepunchCommits = require( "@viral32111/facepunch-commits" )
 ```
 
 ### Fetch Commit(s)
@@ -156,7 +160,7 @@ Here is a basic example, demonstrating how to use this package:
 
 ```javascript
 // Import packages
-const facepunchCommits = require( "facepunch-commits" )
+const facepunchCommits = require( "@viral32111/facepunch-commits" )
 
 // Fetch the latest commit with no specific repository
 facepunchCommits.fetch( { repository: "garrysmod", max: 1 } ).then( ( commits ) => {
