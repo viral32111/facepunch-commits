@@ -18,7 +18,7 @@ along with this program. If not, see https://www.gnu.org/licenses.
 
 /************** Setup **************/
 
-// Import module
+// Import packages
 const facepunchCommits = require( "../source/main.js" )
 
 /************** Callbacks **************/

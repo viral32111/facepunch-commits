@@ -18,7 +18,7 @@ along with this program. If not, see https://www.gnu.org/licenses.
 
 /************** Setup **************/
 
-// Import modules
+// Import packages
 const https = require( "https" )
 
 /************** Globals **************/
@@ -135,25 +135,25 @@ async function fetch( options ) {
 		/************** Input validation **************/
 	
 		// Repository must be undefined or a string
-		if ( repository !== undefined && typeof( repository ) !== "string" ) reject( 1 )
+		if ( repository !== undefined && typeof( repository ) !== "string" ) reject( 101 )
 		
 		// Max commits must be a number
-		if ( typeof( max ) !== "number" ) reject( 2 )
+		if ( typeof( max ) !== "number" ) reject( 102 )
 		
 		// After must be undefined, a date, string or number
-		// TODO: if ( before !== undefined && ( isValidDate( before ) || typeof( before ) !== "number" || typeof( before ) !== "string" ) ) reject( 3 )
+		// TODO: if ( before !== undefined && ( isValidDate( before ) || typeof( before ) !== "number" || typeof( before ) !== "string" ) ) reject( 103 )
 
 		// After must be undefined, a date, string or number
-		// TODO: if ( after !== undefined && ( isValidDate( after ) || typeof( after ) !== "number" || typeof( after ) !== "string" ) ) reject( 4 )
+		// TODO: if ( after !== undefined && ( isValidDate( after ) || typeof( after ) !== "number" || typeof( after ) !== "string" ) ) reject( 104 )
 
 		// User Agent must be a string
-		if ( typeof( userAgent ) !== "string" ) reject( 5 )
+		if ( typeof( userAgent ) !== "string" ) reject( 105 )
 
 		// Don't allow fetching less than 1 commit
-		if ( max < 1 ) reject( 6 )
+		if ( max < 1 ) reject( 106 )
 
 		// Don't allow empty an User Agent
-		if ( userAgent.length < 1 ) reject( 7 )
+		if ( userAgent.length < 1 ) reject( 107 )
 
 		/************** API request **************/
 
@@ -193,10 +193,10 @@ async function fetch( options ) {
 			const data = await parseResponse( response )
 
 			// The repository must have at least 1 commit (if it doesn't, it's likely an invalid repository name)
-			if ( data[ "total" ] < 1 ) reject( 8 )
+			if ( data[ "total" ] < 1 ) reject( 201 )
 
 			// This page must have at least 1 commit result (if it doesn't, it's likely an out-of-bounds page number)
-			if ( data[ "results" ].length < 1 ) reject( 9 )
+			if ( data[ "results" ].length < 1 ) reject( 202 )
 
 			/************** Commits **************/
 
