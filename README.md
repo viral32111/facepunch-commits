@@ -201,7 +201,7 @@ This software is distributed without any warranty, without even the implied warr
 
 ### Disclaimer
 
-[Facepunch Commits](https://commits.facepunch.com) is a section of the official [Facepunch Studios](https://facepunch.com/) website. [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://github.com/viral32111/facepunch-commits).*
+[Facepunch Commits](https://commits.facepunch.com) is a section of the official [Facepunch Studios](https://facepunch.com/) website. [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://facepunch.com/legal).*
 
 ### Copyright
 
