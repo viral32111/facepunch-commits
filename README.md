@@ -19,113 +19,113 @@ To fetch one or more commits, call the `.fetch()` function from the imported pac
 To change the fetching options, provide an object as the first argument with the following structure (only options that differ from the default need to be provided):
 
 * **Key:** `repository`
-    * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-    * **Default:** [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined).
-    * **Description:** Fetch commits from this repository.
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+	* **Default:** [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined).
+	* **Description:** Fetch commits from this repository.
 
 * **Key:** `max`
-    * **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
-    * **Default:** `100`.
-    * **Description:** Fetch up to this number of commits.
+	* **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number).
+	* **Default:** `100`.
+	* **Description:** Fetch up to this number of commits.
 
 * **Key:** `userAgent`
-    * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-    * **Default:** `Facepunch Commits (github.com/viral32111/facepunch-commits)`.
-    * **Description:** The [User-Agent HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) to send with the requests.
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+	* **Default:** `Facepunch Commits (github.com/viral32111/facepunch-commits)`.
+	* **Description:** The [User-Agent HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) to send with the requests.
 
 ### Commit Object
 
 The commit object has the following structure (fields that aren't guaranteed are either due to redacted commit information or commits authored by non-Facepunch employees, ensure to verify if the field is equal to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined) before processing it):
 
 * **Key:** `id`
-    * **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
-    * **Guaranteed:** Yes.
-    * **Description:** The unique identifier for this commit.
+	* **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number).
+	* **Guaranteed:** ✔️
+	* **Description:** The unique identifier for this commit.
 
 * **Key:** `url`
-    * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-    * **Guaranteed:** Yes.
-    * **Description:** The direct URL of this commit on the Facepunch Commits website.
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+	* **Guaranteed:** ✔️
+	* **Description:** The direct URL of this commit on the Facepunch Commits website.
 
 * **Key:** `changeset`
-    * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined)
-    * **Guaranteed:** No.
-    * **Description:** The changeset ID or shorthand commit SHA.
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined).
+	* **Guaranteed:** ❌
+	* **Description:** The changeset ID or shorthand commit SHA.
 
 * **Key:** `repository`
-    * **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * **Guaranteed:** Yes.
-    * **Description:** An object holding properties about the repository this commit is associated with.
+	* **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
+	* **Guaranteed:** ✔️
+	* **Description:** An object holding properties about the repository this commit is associated with.
 
-    * **Key:** `name`
-        * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-        * **Guaranteed:** Yes.
-        * **Description:** The name of this repository.
+	* **Key:** `name`
+		* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+		* **Guaranteed:** ✔️
+		* **Description:** The name of this repository.
 
-    * **Key:** `url`
-        * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-        * **Guaranteed:** Yes.
-        * **Description:** The direct URL of this repository on the Facepunch Commits website.
+	* **Key:** `url`
+		* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+		* **Guaranteed:** ✔️
+		* **Description:** The direct URL of this repository on the Facepunch Commits website.
 
-    * **Key:** `total`
-        * **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
-        * **Guaranteed:** Yes.
-        * **Description:** The total number of commits pushed to this repository (not to be confused with the `max` option).
+	* **Key:** `total`
+		* **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number).
+		* **Guaranteed:** ✔️
+		* **Description:** The total number of commits pushed to this repository (not to be confused with the `max` option).
 
-    * **Key:** `branch`
-        * **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined)
-        * **Guaranteed:** No.
-        * **Description:** An object holding properties about the branch of the repository this commit is associated with.
+	* **Key:** `branch`
+		* **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined).
+		* **Guaranteed:** ❌
+		* **Description:** An object holding properties about the branch of the repository this commit is associated with.
 
-        * **Key:** `name`
-            * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-            * **Guaranteed:** Yes.
-            * **Description:** The name of this branch.
+		* **Key:** `name`
+			* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+			* **Guaranteed:** ✔️
+			* **Description:** The name of this branch.
 
-        * **Key:** `url`
-            * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-            * **Guaranteed:** Yes.
-            * **Description:** The direct URL of this repository's branch on the Facepunch Commits website.
+		* **Key:** `url`
+			* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+			* **Guaranteed:** ✔️
+			* **Description:** The direct URL of this repository's branch on the Facepunch Commits website.
 
 * **Key:** `author`
-    * **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * **Guaranteed:** Yes.
-    * **Description:** An object holding properties about the author of this commit.
+	* **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
+	* **Guaranteed:** ✔️
+	* **Description:** An object holding properties about the author of this commit.
 
-    * **Key:** `name`
-        * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-        * **Guaranteed:** Yes.
-        * **Description:** The name of this author.
+	* **Key:** `name`
+		* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+		* **Guaranteed:** ✔️
+		* **Description:** The name of this author.
 
-    * **Key:** `url`
-        * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined)
-        * **Guaranteed:** No.
-        * **Description:** The direct URL of this author on the Facepunch Commits website.
+	* **Key:** `url`
+		* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined).
+		* **Guaranteed:** ❌
+		* **Description:** The direct URL of this author on the Facepunch Commits website.
 
-    * **Key:** `avatar`
-        * **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-        * **Guaranteed:** No.
-        * **Description:** An object holding properties about the avatar of this author.
+	* **Key:** `avatar`
+		* **Type:** [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
+		* **Guaranteed:** ❌
+		* **Description:** An object holding properties about the avatar of this author.
 
-        * **Key:** `id`
-            * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-            * **Guaranteed:** Yes.
-            * **Description:** The ID of this avatar.
+		* **Key:** `id`
+			* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+			* **Guaranteed:** ✔️
+			* **Description:** The ID of this avatar.
 
-        * **Key:** `url`
-            * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-            * **Guaranteed:** Yes.
-            * **Description:** The direct URL to the avatar of this author on the Facepunch Commits website.
+		* **Key:** `url`
+			* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+			* **Guaranteed:** ✔️
+			* **Description:** The direct URL to the avatar of this author on the Facepunch Commits website.
 
 * **Key:** `message`
-    * **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-    * **Guaranteed:** No.
-    * **Description:** The message associated with this commit.
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+	* **Guaranteed:** ❌
+	* **Description:** The message associated with this commit.
 
 * **Key:** `when`
-    * **Type:** [date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-    * **Guaranteed:** Yes.
-    * **Description:** The date & time this commit happened.
+	* **Type:** [date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+	* **Guaranteed:** ✔️
+	* **Description:** The date & time this commit happened.
 
 ### Error Codes
 
@@ -159,13 +159,13 @@ const facepunchCommits = require( "facepunch-commits" )
 // Fetch the latest commit with no specific repository
 facepunchCommits.fetch( { max: 1 } ).then( ( commits ) => {
 
-    // Display a summary of the commit
-    console.log( `[${ commit.id } @ ${ commit.date }] ${ commit.author.name }: ${ commit.message }` )
+	// Display a summary of the commit
+	console.log( `[${ commit.id } @ ${ commit.date }] ${ commit.author.name }: ${ commit.message }` )
 
 } ).catch( ( errorCode ) => {
 
-    // Display the error code
-    console.error( `Error ${ errorCode }!` )
+	// Display the error code
+	console.error( `Error ${ errorCode }!` )
 
 } )
 ```
