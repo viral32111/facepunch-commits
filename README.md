@@ -152,15 +152,20 @@ Code | Description
 
 ### Example
 
+Here is a basic example, demonstrating how to use this package:
+
 ```javascript
 // Import packages
 const facepunchCommits = require( "facepunch-commits" )
 
 // Fetch the latest commit with no specific repository
-facepunchCommits.fetch( { max: 1 } ).then( ( commits ) => {
+facepunchCommits.fetch( { repository: "garrysmod", max: 1 } ).then( ( commits ) => {
+
+	// Fetch the first commit from the array
+	const commit = commits[ 0 ]
 
 	// Display a summary of the commit
-	console.log( `[${ commit.id } @ ${ commit.date }] ${ commit.author.name }: ${ commit.message }` )
+	console.log( `[${ commit.id } @ ${ commit.when }] ${ commit.author.name }: ${ commit.message }` )
 
 } ).catch( ( errorCode ) => {
 
@@ -168,6 +173,12 @@ facepunchCommits.fetch( { max: 1 } ).then( ( commits ) => {
 	console.error( `Error ${ errorCode }!` )
 
 } )
+```
+
+That example, if successful, should produce an output similar to:
+
+```
+[366559 @ Wed Jun 10 2020 17:41:47 GMT+0100 (British Summer Time)] Rubat: You can try to join full servers again,Merge branch 'master' of garrysmod
 ```
 
 ## Legal
