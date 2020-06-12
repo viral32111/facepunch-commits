@@ -1,5 +1,5 @@
 {
-	"name": "facepunch-commits",
+	"name": "@viral32111/facepunch-commits",
 	"description": "An interface for the Facepunch Commits website.",
 	"author": {
 		"name": "viral32111",
@@ -30,7 +30,7 @@
 	},
 
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://npm.pkg.github.com/",
 	},
 
 	"license": "AGPL-3.0"
