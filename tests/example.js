@@ -17,10 +17,10 @@ along with this program. If not, see https://www.gnu.org/licenses.
 */
 
 // Import packages
-const facepunchCommits = require( "../source/main.js" ) // Should be facepunch-commits
+const facepunchCommits = require( "../source/main.js" ) // Should be @viral32111/facepunch-commits
 
 // Fetch the latest commit with no specific repository
-facepunchCommits.fetch( { repository: "garrysmod", max: 1 } ).then( ( commits ) => {
+facepunchCommits.fetch( { max: 1 } ).then( ( commits ) => {
 
 	// Fetch the first commit from the array
 	const commit = commits[ 0 ]

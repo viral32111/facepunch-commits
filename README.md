@@ -10,7 +10,7 @@ To install this package into your project, firstly create a `.npmrc` file inside
 
 ### Importing the package
 
-To import this package into your script, simply call [`require()`](https://nodejs.org/api/modules.html#modules_require_id) with `"facepunch-commits"` as the name. For example:
+To import this package into your script, simply call [`require()`](https://nodejs.org/api/modules.html#modules_require_id) with `"@viral32111/facepunch-commits"` as the name. For example:
 
 ```javascript
 const facepunchCommits = require( "@viral32111/facepunch-commits" )
@@ -163,7 +163,7 @@ Here is a basic example, demonstrating how to use this package:
 const facepunchCommits = require( "@viral32111/facepunch-commits" )
 
 // Fetch the latest commit with no specific repository
-facepunchCommits.fetch( { repository: "garrysmod", max: 1 } ).then( ( commits ) => {
+facepunchCommits.fetch( { max: 1 } ).then( ( commits ) => {
 
 	// Fetch the first commit from the array
 	const commit = commits[ 0 ]
