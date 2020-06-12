@@ -193,7 +193,7 @@ This project is licensed and distributed under the [GNU Affero General Public Li
 
 ### Distribution
 
-I kindly ask anyone who wishes to redistribute this software to please [contact me](mailto:contact@viral32111.com?subject=Facepunch%20Commits%20Distribution) beforehand so that I may review how the software is being used. Of course, I can't stop people from distributing it, but I would love to see how other users have taken this project and adapted it.
+I kindly ask anyone who wishes to redistribute this project to please [contact me](mailto:contact@viral32111.com?subject=Facepunch%20Commits%20Distribution) beforehand so that I may review how the project is being used. Of course, I can't stop people from distributing it, but I would love to see how other users have taken this project and adapted it.
 
 ### Contributing
 
