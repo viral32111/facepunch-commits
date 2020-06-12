@@ -1,0 +1,32 @@
+{
+	"name": "facepunch-commits",
+	"description": "An interface for the Facepunch Commits website.",
+	"author": {
+		"name": "viral32111",
+		"email": "19510403+viral32111@users.noreply.github.com",
+		"url": "https://github.com/viral32111"
+	},
+
+	"version": "0.1.0-alpha",
+
+	"main": "source/main.js",
+	"files": [
+		"source/**.js"
+	],
+	"scripts": {
+		"test": "node tests/fetch.js"
+	},
+
+	"homepage": "https://github.com/viral32111/facepunch-commits",
+	"keywords": [ "interface", "api", "wrapper", "promises", "data", "library", "asynchronous", "facepunch", "commits", "nodejs", "npm", "package" ],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/viral32111/facepunch-commits.git"
+	},
+	"bugs": {
+		"url": "https://github.com/viral32111/facepunch-commits/issues",
+		"email": "19510403+viral32111@users.noreply.github.com"
+	},
+
+	"license": "AGPL-3.0"
+}
