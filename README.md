@@ -188,6 +188,10 @@ Users who contribute to the source code of this project have an express grant of
 
 This software is distributed without any warranty, without even the implied warranty of merchantability or fitness for a particular purpose. *[Learn more](https://www.gnu.org/licenses/).*
 
+### Disclaimer
+
+[Facepunch Commits](https://commits.facepunch.com) is a section of the official [Facepunch Studios](https://facepunch.com/) website. [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://github.com/viral32111/facepunch-commits).*
+
 ### Copyright
 
 Copyright (C) 2020 [viral32111](https://github.com/viral32111).
