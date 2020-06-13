@@ -1,4 +1,4 @@
-# Facepunch Commits
+<div style="text-align: center;"><img src="https://i.imgur.com/XsVlbn9.png"></div>
 
 This is a Node.js package for interfacing with the [Facepunch Commits](https://commits.facepunch.com) website, allowing you to asynchronously fetch any number of commits from any of the repositories.
 
@@ -203,9 +203,9 @@ Users who contribute to the source code of this project have an express grant of
 
 This software is distributed without any warranty, without even the implied warranty of merchantability or fitness for a particular purpose. *[Learn more](https://www.gnu.org/licenses/).*
 
-### Disclaimer
+### Notice
 
-[Facepunch Commits](https://commits.facepunch.com) is a section of the official [Facepunch Studios](https://facepunch.com/) website. [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://facepunch.com/legal).*
+The [Facepunch Commits](https://commits.facepunch.com) website & the Facepunch logo are owned by [Facepunch Studios](https://facepunch.com/). [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://facepunch.com/legal).*
 
 ### Copyright
 
