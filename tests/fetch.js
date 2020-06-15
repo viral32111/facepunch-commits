@@ -46,6 +46,8 @@ function failure( errorCode ) {
 
 /************** Execute tests **************/
 
+// Note that these will not execute and return in the same order they are written in below
+
 // Fetch zero commits (should fail)
 facepunchCommits.fetch( { max: 0 } ).then( success ).catch( failure )
 

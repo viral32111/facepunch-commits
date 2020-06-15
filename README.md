@@ -34,12 +34,19 @@ To change the fetching options, provide an object as the first argument with the
 
 * **Key:** `userAgent`
 	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
-	* **Default:** `Facepunch Commits (github.com/viral32111/facepunch-commits)`.
-	* **Description:** The [User-Agent HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) to send with the requests.
+	* **Default:** `Facepunch Commits Interface/1.1.0`.
+	* **Description:** The [User-Agent HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) to send with the requests, ideal place for name and version of your project.
+
+* **Key:** `from`
+	* **Type:** [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+	* **Default:** `github.com/viral32111/facepunch-commits`.
+	* **Description:** The [From HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/From) to send with the requests, ideal place for contact information.
+
+It is recommended that you appropriately change the `userAgent` and `from` options to match your project.
 
 ### Commit Object
 
-The commit object has the following structure (fields that aren't guaranteed are either due to redacted commit information or commits authored by non-Facepunch employees, ensure to verify if the field is equal to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined) before processing it):
+The commit object has the following structure (fields that are not guaranteed are either due to redacted commit information or commits authored by non-Facepunch employees, ensure to verify if the field is equal to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Undefined) before processing it):
 
 * **Key:** `id`
 	* **Type:** [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number).
@@ -139,19 +146,21 @@ These are the error codes returned by the failure callback. I recommend using a 
 
 Code | Description
 ---- | -----------
-101  | The `repository` option isn't valid string.
-102  | The `max` option isn't valid number.
+101  | The `repository` option is not valid string.
+102  | The `max` option is not valid number.
 103  | *[Reserved for future use](https://github.com/viral32111/facepunch-commits/projects/1#card-39996517)*.
 104  | *[Reserved for future use](https://github.com/viral32111/facepunch-commits/projects/1#card-39996549)*.
-105  | The `userAgent` option isn't a valid string.
+105  | The `userAgent` option is not a valid string.
 106  | Attempted to fetch less than one commit.
 107  | The `userAgent` option is an empty string.
+108  | The `from` option is not a valid string.
+109  | The `from` option is an empty sstring.
 
 #### Website Responses
 
 Code | Description
 ---- | -----------
-201  | The specified `repository` doesn't exist.
+201  | The specified `repository` does not exist.
 202  | The specified `repository` returned no commits.
 
 ### Example

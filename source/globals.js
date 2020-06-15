@@ -36,13 +36,16 @@ const defaultOptions = {
 	max: 100, // Number
 
 	// Only commits from before this date, changeset or commit will be returned
-	// TODO: before: undefined, // Date / Changeset String / Commit Number
+	// TODO: before: undefined, // Date | Changeset String | Commit Number
 
 	// Only commits from after this date, changeset or commit will be returned
-	// TODO: after: undefined, // Date / Changeset String / Commit Number
+	// TODO: after: undefined, // Date | Changeset String | Commit Number
 
-	// The User-Agent header for making HTTP requests, this is an ideal place to put contact info
-	userAgent: "Facepunch Commits (github.com/viral32111/facepunch-commits)" // String
+	// The User-Agent header for making HTTP requests, this is an ideal place to put the name and version of your software
+	userAgent: "Facepunch Commits Interface/1.1.0", // String
+
+	// The From header for making HTTP requests, this is an ideal place to put contact info
+	from: "github.com/viral32111/facepunch-commits" // String
 
 }
 

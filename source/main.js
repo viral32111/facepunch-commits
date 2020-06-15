@@ -41,6 +41,7 @@ async function fetch( options ) {
 		// TODO: const before = mergedOptions.before
 		// TODO: const after = mergedOptions.after
 		const userAgent = mergedOptions.userAgent
+		const from = mergedOptions.from
 
 		/************** Input validation **************/
 	
@@ -56,21 +57,28 @@ async function fetch( options ) {
 		// After must be undefined, a date, string or number
 		// TODO: if ( after !== undefined && ( isValidDate( after ) || typeof( after ) !== "number" || typeof( after ) !== "string" ) ) reject( 104 )
 
-		// User Agent must be a string
+		// User-Agent header must be a string
 		if ( typeof( userAgent ) !== "string" ) reject( 105 )
 
 		// Don't allow fetching less than 1 commit
 		if ( max < 1 ) reject( 106 )
 
-		// Don't allow empty an User Agent
+		// Don't allow an empty User-Agent header
 		if ( userAgent.length < 1 ) reject( 107 )
+
+		// From header must be a string
+		if ( typeof( from ) !== "string" ) reject( 108 )
+
+		// Don't allow an empty From header
+		if ( from.length < 1 ) reject( 109 )
 
 		/************** API request **************/
 
 		// Headers for the request
 		const requestOptions = { headers: {
 			"Accept": "application/json",
-			"User-Agent": userAgent
+			"User-Agent": userAgent,
+			"From": from
 		} }
 
 		// URL encode the repository name (some of them have spaces, such as 'Garrys Mod')
