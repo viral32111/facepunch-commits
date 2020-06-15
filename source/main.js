@@ -18,101 +18,11 @@ along with this program. If not, see https://www.gnu.org/licenses.
 
 /************** Setup **************/
 
-// Import packages
-const https = require( "https" )
+// Import files
+const globals = require( "./globals.js" ) // Global variables
+const functions = require( "./functions.js" ) // Private functions
 
-/************** Globals **************/
-
-// API URL options
-const baseURL = "https://commits.facepunch.com/r/" // Goes at the start
-const formatQuery = "?format=json" // Goes on the end (kinda)
-
-// Regular expressions for API results
-const redacted = new RegExp( "▍|▆|▇|▊|▌|▉|▋|█|▅|▄" ) // Characters that count as information being redacted
-const avatarID = new RegExp( "s\/([a-zA-Z0-9]+)|avatar\/([0-9-]+)" ) // Extract the user's avatar ID
-
-// The default options for the first argument of the fetch() function
-const defaultOptions = {
-
-	// The name of the repository to fetch commits from, default is all repositories
-	repository: undefined, // String
-
-	// The maximum amount of commits to return, default is 100 as the API returns that amount in a single response
-	max: 100, // Number
-
-	// Only commits from before this date, changeset or commit will be returned
-	// TODO: before: undefined, // Date / Changeset String / Commit Number
-
-	// Only commits from after this date, changeset or commit will be returned
-	// TODO: after: undefined, // Date / Changeset String / Commit Number
-
-	// The User-Agent header for making HTTP requests, this is an ideal place to put contact info
-	userAgent: "Facepunch Commits (github.com/viral32111/facepunch-commits)" // String
-
-}
-
-/************** Private functions **************/
-
-// Private helper function to check for a valid date (https://stackoverflow.com/a/44198641)
-/* TODO: function isValidDate( date ) {
-	return date && Object.prototype.toString.call( date ) === "[object Date]" && !isNaN( date )
-} */
-
-// Private helper function to convert a string commit message into a nicer array
-function parseCommitMessage( message ) {
-	return message
-		.replace( /\r|\n/g, "\n" ) // Replace all CR & LF with just LF
-		.split( "\n" ) // Split into array by line
-		.filter( ( value ) => value != "" ) // Remove empty lines
-}
-
-// Private helper function to promisify https.request()
-async function httpsRequest( url, options ) {
-	
-	// Return a new promise
-	return new Promise( async ( resolve, reject ) => {
-
-		// Create the request
-		const request = https.request( url, options, resolve )
-
-		// Catch any errors
-		request.on( "error", reject )
-
-		// Execute the request
-		request.end()
-
-	} )
-
-}
-
-// Private helper function to collect all chunks from a HTTP response & convert them to a JSON object
-async function parseResponse( response ) {
-
-	// Return a new promise
-	return new Promise( async ( resolve, reject ) => {
-
-		// Create empty string to hold the final body
-		let body = ""
-
-		// Append to body when a new chunk of data is received
-		response.on( "data", ( chunk ) => body += chunk )
-
-		// Runs when the response is finished
-		response.on( "end", () => {
-	
-			// Convert body to a JSON object
-			const data = JSON.parse( body )
-
-			// Resolve the promise with the JSON object
-			resolve( data )
-	
-		} )
-
-	} )
-
-}
-
-/************** Public functions **************/
+/************** Main **************/
 
 // Public function to fetch commits
 async function fetch( options ) {
@@ -123,7 +33,7 @@ async function fetch( options ) {
 		/************** Create options **************/
 
 		// Merge the provided options into the default options and store in a new object
-		const mergedOptions = { ...defaultOptions, ...options }
+		const mergedOptions = { ...globals.defaultOptions, ...options }
 
 		// For easier access later on
 		const repository = mergedOptions.repository
@@ -167,7 +77,7 @@ async function fetch( options ) {
 		const safeRepository = encodeURIComponent( repository )
 
 		// Construct the URL for this repository
-		const repoURL = baseURL + ( repository !== undefined ? safeRepository : "" ) + formatQuery
+		const repoURL = globals.baseURL + ( repository !== undefined ? safeRepository : "" ) + globals.formatQuery
 
 		// Will be an array of all the commits fetched from newest (index 0) to oldest (max index)
 		let fetchedCommits = []
@@ -187,10 +97,10 @@ async function fetch( options ) {
 			const pageURL = repoURL + "&p=" + pageNumber
 
 			// Make the HTTP request to the API
-			const response = await httpsRequest( pageURL, requestOptions )
+			const response = await functions.httpsRequest( pageURL, requestOptions )
 
 			// Parse the response body with our helper function
-			const data = await parseResponse( response )
+			const data = await functions.parseResponse( response )
 
 			// The repository must have at least 1 commit (if it doesn't, it's likely an invalid repository name)
 			if ( data[ "total" ] < 1 ) reject( 201 )
@@ -207,7 +117,7 @@ async function fetch( options ) {
 				if ( fetchedCommits.length >= max ) break
 
 				// Fetch the user's avatar ID (have to use this because there seems to be some sort of legacy avatar ID system that most users don't use, also some users don't even have avatars)
-				const userAvatarMatch = ( commit[ "user" ][ "avatar" ] !== "" ? avatarID.exec( commit[ "user" ][ "avatar" ] ) : undefined )
+				const userAvatarMatch = ( commit[ "user" ][ "avatar" ] !== "" ? globals.avatarID.exec( commit[ "user" ][ "avatar" ] ) : undefined )
 
 				// Create a custom object for the commit
 				const customCommit = {
@@ -216,21 +126,21 @@ async function fetch( options ) {
 					id: commit[ "id" ],
 
 					// URL
-					url: baseURL.substring( 0, baseURL.length - 2 ) + commit[ "id" ],
+					url: globals.baseURL.substring( 0, globals.baseURL.length - 2 ) + commit[ "id" ],
 
 					// Changeset ID (can also be a commit SHA, like on 'garrysmod'), this can be a redacted value!
-					changeset: ( redacted.test( commit[ "changeset" ] ) === true ? undefined : commit[ "changeset" ] ),
+					changeset: ( globals.redacted.test( commit[ "changeset" ] ) === true ? undefined : commit[ "changeset" ] ),
 
 					// Repository
 					repository: {
 						name: commit[ "repo" ],
-						url: baseURL + encodeURIComponent( commit[ "repo" ] ),
+						url: globals.baseURL + encodeURIComponent( commit[ "repo" ] ),
 						total: data[ "total" ],
 
 						// Repository branch, this can be a redacted value!
-						branch: ( redacted.test( commit[ "branch" ] ) === true ? undefined : {
+						branch: ( globals.redacted.test( commit[ "branch" ] ) === true ? undefined : {
 							name: commit[ "branch" ],
-							url: baseURL + encodeURIComponent( commit[ "repo" ] ) + "/" + encodeURIComponent( commit[ "branch" ] )
+							url: globals.baseURL + encodeURIComponent( commit[ "repo" ] ) + "/" + encodeURIComponent( commit[ "branch" ] )
 						} )
 					},
 
@@ -241,11 +151,11 @@ async function fetch( options ) {
 							id: ( userAvatarMatch[ 1 ] !== undefined ? userAvatarMatch[ 1 ] : userAvatarMatch[ 2 ] ),
 							url: commit[ "user" ][ "avatar" ]
 						} ),
-						url: ( userAvatarMatch === undefined ? undefined : baseURL.substring( 0, baseURL.length - 2 ) + commit[ "user" ][ "name" ].replace( " ", "" ) ) // Turns out the URL isn't valid if the user doesn't have an avatar (i've seen this alot on the 'garrysmod' repo from non-Facepunch employees committing to it)
+						url: ( userAvatarMatch === undefined ? undefined : globals.baseURL.substring( 0, globals.baseURL.length - 2 ) + commit[ "user" ][ "name" ].replace( " ", "" ) ) // Turns out the URL isn't valid if the user doesn't have an avatar (i've seen this alot on the 'garrysmod' repo from non-Facepunch employees committing to it)
 					},
 					
 					// Message, this can be a redacted value!
-					message: ( redacted.test( commit[ "message" ] ) === true ? undefined : parseCommitMessage( commit[ "message" ] ) ),
+					message: ( globals.redacted.test( commit[ "message" ] ) === true ? undefined : functions.parseCommitMessage( commit[ "message" ] ) ),
 
 					// Date & time
 					when: new Date( commit[ "created" ] )
@@ -267,7 +177,9 @@ async function fetch( options ) {
 
 }
 
-// Export function
+/************** Export **************/
+
+// Export main fetch function
 module.exports = {
 	fetch: fetch
 }
