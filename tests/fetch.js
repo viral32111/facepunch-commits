@@ -1,6 +1,6 @@
 /*
 Facepunch Commits - An interface for the Facepunch Commits website.
-Copyright (C) 2020 viral32111 (contact@viral32111.com)
+Copyright (C) 2020 viral32111 (github.com/viral32111/facepunch-commits)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as

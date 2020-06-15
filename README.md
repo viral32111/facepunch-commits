@@ -189,23 +189,29 @@ That example, if successful, should produce an output similar to:
 
 ### License
 
-This project is licensed and distributed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html) in the hope that it will be useful to the open-source community and help to educate future programmers. This is free, open-source software meaning everyone is allowed to take this source code to modify it, redistribute it, use it privately or commercially so long as they publicly disclose the complete source code, state the changes they've made to it, provide a license and copyright notice however is appropriate and finally, retain the same license. *[Learn more](LICENSE.md).*
+This software is licensed and distributed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html) in the hope that it will be useful to the open-source community and help to educate future programmers. This is free, open-source software meaning you are allowed to take this source code to modify it, redistribute it, use it privately or commercially so long as you publicly disclose the complete source code, state the changes you have made to it, provide a license and copyright notice however is appropriate and finally, retain the same license. *[Learn more](LICENSE.md).*
 
 ### Distribution
 
-I kindly ask anyone who wishes to redistribute this project to please [contact me](mailto:contact@viral32111.com?subject=Facepunch%20Commits%20Distribution) beforehand so that I may review how the project is being used. Of course, I can't stop people from distributing it, but I would love to see how other users have taken this project and adapted it.
+I kindly ask anyone who wishes to redistribute this software to please [contact me](mailto:contact@viral32111.com?subject=Facepunch%20Commits%20Distribution) beforehand so that I may review how the software is being used. Of course, I cannot stop you from distributing it, but I would love to see how you have taken this software and adapted it. This is in your best interest, as adaptations and redistributions that I see as interesting or high quality may be listed here, or given extra publicity.
+
+If you are intending to redistribute the program with changes because this repository seems stale, dead, or otherwise abandoned, please do not. You should contribute your changes directly to this repository and keep it active. If you are redistributing this software at a cost, or over a network, please ensure you are following the conditions described in the license. Most importantly, the complete public disclosure of the license and source code of your redistribution.
 
 ### Contributing
 
-Users who contribute to the source code of this project have an express grant of patent rights. This means they hold the copyright for the code that they create. However, their code still falls under the same license permissions and conditions.
+When you contribute to this software, whether it be code enhancements, code optimisations, new features, or anything else, you will have an express grant of patent rights over your contribution. This means that you hold the copyright and ownership of what you create. If you are contributing content that is not originally authored by you, please ensure that you have the appropriate permission from the original author beforehand, or better, request the original author to contribute it on your behalf. Please note, however, your contribution still falls under the same license permissions and conditions described in the license, so others are still free to adapt, modify and redistribute it. If you do not wish for this, then please do not contribute to this software.
 
 ### Warranty
 
-This software is distributed without any warranty, without even the implied warranty of merchantability or fitness for a particular purpose. *[Learn more](https://www.gnu.org/licenses/).*
+This software is provided as-is, without any warranty of any kind, without even the implied warranty of merchantability or fitness for a particular purpose. However, if you discover the software is defective (in the case of bugs with the source code) while you are using it, then you may report it [here](https://github.com/viral32111/facepunch-commits/issues) as it may turn out to be an issue with the software as a whole. Please note, this does not guarantee that it will be fixed, nor does it also imply responsibility by the author of the code, as bugs are often accidental mistakes caused by human error. In any other situation, you assume the responsibility and cost of all necessary servicing, repair, or correction.
+
+### Liability
+
+I and other code authors are not responsible for anything you do while using this program. Any general, special, incidental, or consequential damages, data loss, reports, penalties, or other repercussions of utilisation caused by your abuse, misuse, or inability to use this software correctly fall under your responsibility.
 
 ### Notice
 
-The [Facepunch Commits](https://commits.facepunch.com) website & the Facepunch logo are owned by [Facepunch Studios](https://facepunch.com/). [My project](https://github.com/viral32111/facepunch-commits) and [I myself](https://github.com/viral32111) am not affiliated with this company. *[Learn more](https://facepunch.com/legal).*
+The [Facepunch Commits](https://commits.facepunch.com) website and the Facepunch logo are owned by [Facepunch Studios](https://facepunch.com/). This software and I are not affiliated with Facepunch. *[Learn more](https://facepunch.com/legal).*
 
 ### Copyright
 
