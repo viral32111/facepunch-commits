@@ -1,6 +1,6 @@
-/*
+/***********************************************************************
 Facepunch Commits - An interface for the Facepunch Commits website.
-Copyright (C) 2020 viral32111 (github.com/viral32111/facepunch-commits)
+Copyright (C) 2020 - 2021 viral32111 (https://viral32111.com).
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see https://www.gnu.org/licenses.
-*/
+***********************************************************************/
 
 // Import packages
 const facepunchCommits = require( "../source/main.js" ) // Should be @viral32111/facepunch-commits
