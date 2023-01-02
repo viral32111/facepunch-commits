@@ -224,4 +224,4 @@ The [Facepunch Commits](https://commits.facepunch.com) website and the Facepunch
 
 ### Copyright
 
-Copyright (C) 2020 - 2022 [viral32111](https://github.com/viral32111).
+Copyright (C) 2020-2023 [viral32111](https://github.com/viral32111).
